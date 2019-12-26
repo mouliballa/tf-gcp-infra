@@ -1,0 +1,8 @@
+ REF link: https://codelabs.developers.google.com/codelabs/cloud-networking-101/index.html?index=..%2F..index#4
+
+Functionality: We use the well known "ping" tool for basic connectivity checking between VMs. Ping measures packet loss as well as latency. Packet loss is always bad because it means network traffic does not reach it's target, or there is an error on the return path. You should not experience this within this lab. Latency is defined as the Round Trip Time (RTT) network packets take to get from one host to the other and back. Lower latency improves user experience (anything over 100ms application delay, which might include several network round trips, is noticeable) and also improves transfer speeds. With higher latency, extra caching layers or WAN accelerators might have to be used.
+
+get hostname: curl -H "Metadata-Flavor:Google" http://169.254.169.254/computeMetadata/v1/instance/hostname
+systnax for FQDN hostname  is [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal
+
+TRy to ping and observe the latency
